@@ -35,12 +35,24 @@ class ValidateurMouvement:
         if not plateau.est_case_libre(mouvement.get_arrivee()):
             return False, "La case de destination est occupée"
 
-        # Vérifier que le pion peut se déplacer vers cette position
-        if not pion.peut_se_deplacer_vers(mouvement.get_arrivee()):
+        # Calculs de base
+        depart = mouvement.get_depart()
+        arrivee = mouvement.get_arrivee()
+        diff_ligne = arrivee.get_ligne() - depart.get_ligne()
+        diff_colonne = arrivee.get_colonne() - depart.get_colonne()
+
+        # 1) Tentative de capture (saut de 2 cases ou plus en diagonale)
+        if abs(diff_ligne) >= 2 and abs(diff_ligne) == abs(diff_colonne):
+            return ValidateurMouvement.__valider_capture(plateau, pion, mouvement)
+
+        # 2) Déplacement simple (une seule case en diagonale) -> selon le type de pion
+        if abs(diff_ligne) == 1 and abs(diff_colonne) == 1:
+            if pion.peut_se_deplacer_vers(arrivee):
+                return True, ""
             return False, "Mouvement invalide pour ce type de pion"
 
-        # Vérifier les captures
-        return ValidateurMouvement.__valider_capture(plateau, pion, mouvement)
+        # 3) Sinon, mouvement invalide
+        return False, "Mouvement invalide"
 
     @staticmethod
     def __valider_capture(plateau: Plateau, pion: APion, mouvement: Mouvement) -> Tuple[bool, str]:

@@ -41,7 +41,7 @@ class Jeu:
         print()
         blancs = self.__plateau.compter_pions(Couleur.BLANC)
         noirs = self.__plateau.compter_pions(Couleur.NOIR)
-        print(f"Pions blancs (⚪): {blancs}  |  Pions noirs (⚫): {noirs}")
+        print(f"Pions blancs (O): {blancs}  |  Pions noirs (X): {noirs}")
         print()
 
     def __changer_joueur(self):
@@ -109,10 +109,10 @@ class Jeu:
         """Lance la boucle de jeu principale"""
         print("\n🎮 Bienvenue dans le jeu de Dames ! 🎮\n")
         print("Instructions :")
-        print("- Les pions blancs (⚪) commencent en bas")
-        print("- Les pions noirs (⚫) commencent en haut")
+        print("- Les pions blancs (O) commencent en bas")
+        print("- Les pions noirs (X) commencent en haut")
         print("- Entrez les mouvements au format : A3 B4")
-        print("- Un pion devient une DAME (◯/●) en atteignant le bord opposé")
+        print("- Un pion devient une DAME (0/Y) en atteignant le bord opposé")
         print("- Tapez 'q' pour quitter\n")
         input("Appuyez sur Entrée pour commencer...")
 

@@ -42,7 +42,8 @@ class PionSimple(APion):
 
     def obtenir_symbole(self) -> str:
         """Symbole pour l'affichage"""
-        return "⚪" if self._couleur == Couleur.BLANC else "⚫"
+        return "O" if self._couleur == Couleur.BLANC else "X"
+        # return "⚪" if self._couleur == Couleur.BLANC else "⚫"
 
     def get_type(self) -> TypePion:
         """Retourne le type de pion"""

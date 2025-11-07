@@ -33,7 +33,7 @@ class Dame(APion):
 
     def obtenir_symbole(self) -> str:
         """Symbole pour l'affichage (différent du pion simple)"""
-        return "◯" if self._couleur == Couleur.BLANC else "●"
+        return "0" if self._couleur == Couleur.BLANC else "Y"
 
     def get_type(self) -> TypePion:
         """Retourne le type de pion"""
