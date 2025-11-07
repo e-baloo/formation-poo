@@ -54,6 +54,12 @@ Les exemples théoriques utilisent du **pseudo-code agnostique** de tout langage
    - Méthodes statiques
    - Instance vs Static : quand utiliser quoi ?
 
+8. [**L'opérateur instanceof**](theorie/08-instanceof.md)
+   - Vérification du type d'un objet
+   - Polymorphisme et downcasting sécurisé
+   - Filtrage par type
+   - Bonnes pratiques et alternatives
+
 ### 🎮 Partie pratique
 
 Le cas pratique est un **jeu de Dames** complet implémenté en Python, démontrant **tous** les concepts de la POO vus en théorie.
@@ -90,7 +96,7 @@ Le cas pratique est un **jeu de Dames** complet implémenté en Python, démontr
 
 Cette formation peut être présentée :
 - **En présentiel** : 1 jour (6-8 heures)
-  - Matin : Théorie (chapitres 1-7)
+  - Matin : Théorie (chapitres 1-8)
   - Après-midi : Étude du cas pratique + exercices
 
 - **En e-learning** : À votre rythme
@@ -172,7 +178,8 @@ formation-poo/
 │   ├── 04-interfaces.md
 │   ├── 05-public-protected-private.md
 │   ├── 06-getters-setters.md
-│   └── 07-static.md
+│   ├── 07-static.md
+│   └── 08-instanceof.md
 │
 └── pratique/                           # Partie pratique
     ├── README.md                       # Documentation du jeu
